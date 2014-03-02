@@ -1,0 +1,76 @@
+/* global settings */
+
+html, body {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+/* app sections */
+
+#left {
+  width: 50%;
+  height: 80%;
+  float: left;
+}
+#right {
+  width: 50%;
+  height: 80%;
+  margin-left: 50%;
+}
+
+.app-screen {
+  border: solid 6px rgb(124, 7, 127);
+  border-right-color: rgb(162, 57, 165);
+  border-bottom-color: rgb(172, 78, 175);
+  background-color: rgba(0, 0, 0, 0.77);
+  padding: 6px;
+  font-family: monospace;
+  color: rgb(39, 143, 0);
+
+}
+.app-screen .clickable:hover {
+  color: rgb(55, 186, 6);
+  transition: color .25s;
+  -moz-transition: color .25s;
+  -webkit-transition: color .25s;
+}
+.app-panel {
+  overflow: scroll;
+  background-color: rgb(141, 40, 152);
+  padding: 6px;
+  font-family: monospace;
+  color: rgb(39, 143, 0);
+
+  
+  
+}
+
+#wallets {
+  height: 50%;
+}
+#contracts {
+  height: 50%;
+}
+
+#details {
+  height: 90%;
+  color: rgb(55, 186, 6);
+}
+#controls {
+  height: 10%;
+}
+
+#transactions {
+  height: 20%;
+}
+
+.ethereum-code {
+  white-space: pre;
+}
+
+.clickable {
+  cursor: pointer;
+}

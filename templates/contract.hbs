@@ -1,0 +1,24 @@
+<div>Contract: {{id}}</div>
+<div>Address: {{address}}</div>
+
+<br>
+- - - - - - - - - - - - - - - - - - - -
+<br><br><br>
+
+<div class="ethereum-code">{{cll}}</div>
+
+<br><br>
+- - - - - - - - - - - - - - - - - - - -
+<br><br>
+
+<div>Storage:</div>
+<br>
+
+{{#each storage}}
+  {{#if this}}
+    {{@index}}: {{this}}
+    <br>
+  {{/if}}
+{{else}}
+  empty
+{{/each}}

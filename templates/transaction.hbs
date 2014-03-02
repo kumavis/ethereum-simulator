@@ -1,0 +1,21 @@
+<div>Transaction: {{id}}</div>
+<div>From: {{sender}}</div>
+<div>To: {{target}}</div>
+<div>Value: {{value}}</div>
+<div>Fee: {{fee}}</div>
+
+<br><br>
+- - - - - - - - - - - - - - - - - - - -
+<br><br>
+
+<div>Data:</div>
+<br>
+
+{{#each data}}
+  {{#if this}}
+    {{@index}}: {{this}}
+    <br>
+  {{/if}}
+{{else}}
+  empty
+{{/each}}
