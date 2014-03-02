@@ -1,0 +1,19 @@
+{
+  "name": "ethereum-simulator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "beefy example.js --open --live -- -t brfs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "hat": "0.0.3",
+    "extend": "~1.2.1"
+  },
+  "devDependencies": {
+    "brfs": "~1.0.0"
+  }
+}
