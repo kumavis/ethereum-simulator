@@ -2,28 +2,17 @@ var fs = require('fs')
 var Handlebars = require('handlebars')
 var Simulator = require('./index.js').Simulator
 
-var appElements = prepareDom()
-var appTemplates = prepareTemplates()
-setTimeout(startAnimation,3000)
-
 sim = new Simulator()
 
+//
+// Views
+//
 
-document.onclick = function(event){
-  var classList = event.target.classList
-  var id = event.target.getAttribute('data-id')
-
-  if (classList.contains('contract')) {
-    var contract = sim.contracts[id]
-    renderDetailsSection(appTemplates.contract, contract)
-  } else if (classList.contains('transaction')) {
-    var transaction = sim.transactions[id]
-    renderDetailsSection(appTemplates.transaction, transaction)
-  } else if (classList.contains('wallet')) {
-    var wallet = sim.wallets[id]
-    renderDetailsSection(appTemplates.wallet, wallet)
-  }
-}
+var appElements = prepareDom()
+var appTemplates = prepareTemplates()
+prepareControlPanel()
+setTimeout(startAnimation,3000)
+document.onclick = handleClick
 
 sim.on('transaction',handlerForEventDelay(createTransactionView))
 
@@ -104,11 +93,26 @@ function prepareDom() {
   return appElements
 }
 
+function prepareControlPanel() {
+  var el = document.createElement('img')
+  el.id = 'button-transaction'
+  el.src = './assets/transfer.svg'
+  el.className = 'clickable'
+  appElements.controls.appendChild(el)
+  var el = document.createElement('img')
+  el.id = 'button-contract'
+  el.src = './assets/contract.svg'
+  el.className = 'clickable'
+  appElements.controls.appendChild(el)
+}
+
 function prepareTemplates() {
   var appTemplates = {
     contract: Handlebars.compile(fs.readFileSync('./templates/contract.hbs').toString()),
     transaction: Handlebars.compile(fs.readFileSync('./templates/transaction.hbs').toString()),
     wallet: Handlebars.compile(fs.readFileSync('./templates/wallet.hbs').toString()),
+    new_transaction: Handlebars.compile(fs.readFileSync('./templates/new_transaction.hbs').toString()),
+    new_contract: Handlebars.compile(fs.readFileSync('./templates/new_contract.hbs').toString()),
   }
   return appTemplates
 }
@@ -142,6 +146,26 @@ function startAnimation() {
   },500)  
 }
 
+function handleClick(event){
+  var classList = event.target.classList
+  var id = event.target.getAttribute('data-id')
+
+  if (classList.contains('contract')) {
+    var contract = sim.contracts[id]
+    renderDetailsSection(appTemplates.contract, contract)
+  } else if (classList.contains('transaction')) {
+    var transaction = sim.transactions[id]
+    renderDetailsSection(appTemplates.transaction, transaction)
+  } else if (classList.contains('wallet')) {
+    var wallet = sim.wallets[id]
+    renderDetailsSection(appTemplates.wallet, wallet)
+  } else if (event.target.id === 'button-transaction') {
+    renderDetailsSection(appTemplates.new_transaction, {wallets: sim.wallets})
+  } else if (event.target.id === 'button-contract') {
+    renderDetailsSection(appTemplates.new_contract, {wallets: sim.wallets})
+  }
+}
+
 //
 // Begin simulation
 //
@@ -164,6 +188,3 @@ sim.createTransaction({
   data: [123,1337],
 })
 
-//
-// End simulation
-//

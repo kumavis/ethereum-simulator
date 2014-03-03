@@ -1,0 +1,31 @@
+<div class="ethereum-code"> _   _                  ____            _                  _   
+| \ | | _____      __  / ___|___  _ __ | |_ _ __ __ _  ___| |_ 
+|  \| |/ _ \ \ /\ / / | |   / _ \| '_ \| __| '__/ _` |/ __| __|
+| |\  |  __/\ V  V /  | |__| (_) | | | | |_| | | (_| | (__| |_ 
+|_| \_|\___| \_/\_/    \____\___/|_| |_|\__|_|  \__,_|\___|\__|
+                                                               
+</div>
+
+<div>Author:
+  <select>
+    {{#each wallets}}
+      <option value="{{@key}}">{{this.id}}</option>
+    {{/each}}
+  </select>
+</div>
+
+<div>Initial Value:
+  <input type="text" style="width: 40px" value="0"/>
+</div>
+<div>Initial Fee:
+  <input type="text" style="width: 40px" value="0"/>
+</div>
+
+<div>Data:</div>
+<br>
+
+<div class="textarea" contenteditable="true"></div>
+
+<br><br>
+
+<div id="button-submit-contract" class="clickable">$ submit contract</div>

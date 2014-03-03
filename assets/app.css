@@ -29,7 +29,7 @@ html, body {
   padding: 6px;
   font-family: monospace;
   color: rgb(39, 143, 0);
-
+  overflow: scroll;
 }
 .app-screen .clickable:hover {
   color: rgb(55, 186, 6);
@@ -38,14 +38,47 @@ html, body {
   -webkit-transition: color .25s;
 }
 .app-panel {
-  overflow: scroll;
+  overflow: hidden;
   background-color: rgb(141, 40, 152);
   padding: 6px;
   font-family: monospace;
   color: rgb(39, 143, 0);
+}
+.app-screen .textarea {
+  outline: none;
+  border: dotted rgb(39, 143, 0);
+  height: auto;
+  min-height: 100px;
+  padding: 2px;
+}
 
-  
-  
+.app-screen input {
+  outline: none;
+  border: 0;
+  border-radius: 0;
+  background-color: rgb(39, 143, 0);
+  color: rgba(0, 0, 0, 0.77);
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.app-screen select {
+  outline: none;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  background-color: rgb(39, 143, 0);
+  border: 0;
+  border-radius: 0;
+  color: rgba(0, 0, 0, 0.77);
+  font-family: monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #wallets {
@@ -59,6 +92,10 @@ html, body {
   height: 90%;
   color: rgb(55, 186, 6);
 }
+#details .clickable:hover {
+  color: rgb(71, 222, 14);
+}
+
 #controls {
   height: 10%;
 }
@@ -74,3 +111,27 @@ html, body {
 .clickable {
   cursor: pointer;
 }
+
+/* Designed by Fábio Testa São Paulo, BR 2013 */
+#button-transaction {
+  height: 100%;
+  opacity: 0.2;
+  transition: opacity .25s;
+  -moz-transition: opacity .25s;
+  -webkit-transition: opacity .25s;
+}
+#button-transaction:hover {
+  opacity: 0.8;
+}
+/* Designed by Lorena Salagre 2014 */
+#button-contract {
+  height: 100%;
+  opacity: 0.2;
+  transition: opacity .25s;
+  -moz-transition: opacity .25s;
+  -webkit-transition: opacity .25s;
+}
+#button-contract:hover {
+  opacity: 0.8;
+}
+
