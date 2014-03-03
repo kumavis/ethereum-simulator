@@ -4,8 +4,10 @@ var Simulator = require('./index.js').Simulator
 
 var appElements = prepareDom()
 var appTemplates = prepareTemplates()
+setTimeout(startAnimation,3000)
 
 sim = new Simulator()
+
 
 document.onclick = function(event){
   var classList = event.target.classList
@@ -23,7 +25,7 @@ document.onclick = function(event){
   }
 }
 
-sim.on('transaction',createTransactionView)
+sim.on('transaction',handlerForEventDelay(createTransactionView))
 
 function createTransactionView(transaction) {
   var msg = new String()
@@ -38,8 +40,8 @@ function createTransactionView(transaction) {
   console.log(msg)
 }
 
-sim.on('wallet',createWalletView)
-sim.on('wallet.update',updateWalletView)
+sim.on('wallet',handlerForEventDelay(createWalletView))
+sim.on('wallet.update',handlerForEventDelay(updateWalletView))
 
 function createWalletView(wallet) {
   var el = document.createElement('div')
@@ -59,35 +61,35 @@ function updateWalletView(wallet,el) {
   console.log(msg)
 }
 
-sim.on('contract',createContractView)
-sim.on('contract.update',updateContractView)
-// sim.on('contract.activate',animateContractView)
+sim.on('contract',handlerForEventDelay(createContractView))
+sim.on('contract.update',handlerForEventDelay(updateContractView))
+// sim.on('contract.activate',handlerForEventDelay(animateContractView))
 
-function createContractView(contract) {
+function createContractView(contract,wallet) {
   var el = document.createElement('div')
   el.setAttribute('data-id',contract.id)
   el.className = 'contract clickable'
   appElements.contracts.appendChild(el)
-  updateContractView(contract,el)
+  updateContractView(contract,wallet,el)
 }
 
-function updateContractView(contract,el) {
+function updateContractView(contract,wallet,el) {
   var msg = new String()
   msg += 'CONTRACT: '
-  msg += '('+sim.wallets[contract.address].value+') '
+  msg += '('+wallet.value+') '
   msg += contract.id
   el = el || document.querySelector('.contract[data-id="'+contract.id+'"]')
   el.innerText = msg
   console.log(msg)
 }
 
-function animateContractView(contract,transaction) {
-  var msg = new String()
-  msg += 'Activated: '
-  msg += '('+transaction.value+') '
-  msg += transaction.sender+' -> '+transaction.target
-  console.log(msg)
-}
+// function animateContractView(contract,transaction) {
+//   var msg = new String()
+//   msg += 'Activated: '
+//   msg += '('+transaction.value+') '
+//   msg += transaction.sender+' -> '+transaction.target
+//   console.log(msg)
+// }
 
 function prepareDom() {
   var appElements = {
@@ -122,6 +124,22 @@ function createSection(id,parent,className) {
 
 function renderDetailsSection(template,context) {
   appElements.details.innerHTML = template(context)
+}
+
+var animationStack = []
+function handlerForEventDelay(callback) {
+  return function() {
+    animationStack.push([callback,arguments])
+  }
+}
+
+function startAnimation() {
+  setInterval(function() {
+    if (animationStack.length) {
+      var data = animationStack.shift()
+      data[0].apply(null,data[1])
+    }
+  },500)  
 }
 
 //
