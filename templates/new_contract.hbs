@@ -7,7 +7,7 @@
 </div>
 
 <div>Author:
-  <select>
+  <select id="nc-select-author">
     {{#each wallets}}
       <option value="{{@key}}">{{this.id}}</option>
     {{/each}}
@@ -15,16 +15,22 @@
 </div>
 
 <div>Initial Value:
-  <input type="text" style="width: 40px" value="0"/>
+  <input id="nc-value" type="text" style="width: 40px" value="0"/>
 </div>
 <div>Initial Fee:
-  <input type="text" style="width: 40px" value="0"/>
+  <input id="nc-fee" type="text" style="width: 40px" value="0"/>
 </div>
 
-<div>Data:</div>
+<div>CLL Code: (display only)</div>
 <br>
 
-<div class="textarea" contenteditable="true"></div>
+<div id="nc-cll" class="textarea" contenteditable="true"></div>
+<br>
+
+<div>JS Code: (actually runs)</div>
+<br>
+
+<div id="nc-js" class="textarea" contenteditable="true"></div>
 
 <br><br>
 

@@ -7,30 +7,36 @@
 </div>
 
 <div>From:
-  <select>
+  <select id="nt-select-from">
     {{#each wallets}}
-      <option value="{{@key}}">{{this.id}}</option>
+      <option value="{{@key}}">(wallet) {{this.id}}</option>
+    {{/each}}
+    {{#each contracts}}
+      <option value="{{@key}}">(contract) {{this.id}}</option>
     {{/each}}
   </select>
 </div>
 <div>To:
-  <select>
+  <select id="nt-select-to">
     {{#each wallets}}
-      <option value="{{@key}}">{{this.id}}</option>
+      <option value="{{@key}}">(wallet) {{this.id}}</option>
+    {{/each}}
+    {{#each contracts}}
+      <option value="{{@key}}">(contract) {{this.id}}</option>
     {{/each}}
   </select>
 </div>
 <div>Value:
-  <input type="text" style="width: 40px" value="0"/>
+  <input id="nt-value" type="text" style="width: 40px" value="0"/>
 </div>
 <div>Fee:
-  <input type="text" style="width: 40px" value="0"/>
+  <input id="nt-fee" type="text" style="width: 40px" value="0"/>
 </div>
 
 <div>Data:</div>
 <br>
 
-<div class="textarea" contenteditable="true"></div>
+<div id="nt-data" class="textarea" contenteditable="true"></div>
 
 <br><br>
 

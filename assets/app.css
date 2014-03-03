@@ -122,22 +122,18 @@ html, body {
   opacity: 0.8;
 }
 
-/* Designed by Fábio Testa in São Paulo, BR 2013 */
 #button-transaction {
   height: 100%;
   max-width: 25%;
 }
-/* Designed by Lorena Salagre 2014 */
 #button-contract {
   height: 100%;
   max-width: 25%;
 }
-/* Designed by Klara Zalokar in Ljubljana, SI 2013 */
 #button-wallet {
   height: 100%;
   max-width: 25%;
 }
-/* Designed by David Cadusseau in Cenon, Aquitaine, FR 2012 */
 #button-info {
   float: right;
   height: 100%;

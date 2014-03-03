@@ -73,14 +73,6 @@ function updateContractView(contract,wallet,el) {
   console.log(msg)
 }
 
-// function animateContractView(contract,transaction) {
-//   var msg = new String()
-//   msg += 'Activated: '
-//   msg += '('+transaction.value+') '
-//   msg += transaction.sender+' -> '+transaction.target
-//   console.log(msg)
-// }
-
 function prepareDom() {
   var appElements = {
     left: createSection('left'),
@@ -176,13 +168,52 @@ function handleClick(event){
     var wallet = sim.wallets[id]
     renderDetailsSection(appTemplates.wallet, wallet)
   } else if (event.target.id === 'button-transaction') {
-    renderDetailsSection(appTemplates.new_transaction, {wallets: sim.wallets})
+    renderDetailsSection(appTemplates.new_transaction, {wallets: sim.wallets, contracts: sim.contracts})
   } else if (event.target.id === 'button-contract') {
-    renderDetailsSection(appTemplates.new_contract, {wallets: sim.wallets})
+    renderDetailsSection(appTemplates.new_contract, {wallets: sim.wallets, contracts: sim.contracts})
   } else if (event.target.id === 'button-wallet') {
     renderDetailsSection(appTemplates.new_wallet, {id: Uuid()})
   } else if (event.target.id === 'button-info') {
     renderDetailsSection(appTemplates.about)
+  } else if (event.target.id === 'button-submit-transaction') {
+    var transactionData = extractNewTransactionData()
+    var transaction = sim.createTransaction(transactionData)
+    renderDetailsSection(appTemplates.transaction, transaction)
+  } else if (event.target.id === 'button-submit-contract') {
+    var contractData = extractNewContractData()
+    var contract = sim.createContract(contractData)
+    renderDetailsSection(appTemplates.contract, contract)
+  } else if (event.target.id === 'button-submit-wallet') {
+    var walletData = extractNewWalletData()
+    var wallet = sim.createWallet(walletData)
+    renderDetailsSection(appTemplates.wallet, wallet)
+  }
+}
+
+function extractNewTransactionData() {
+  return {
+    target: document.getElementById('nt-select-to').value,
+    sender: document.getElementById('nt-select-from').value,
+    value: +document.getElementById('nt-value').value,
+    fee: +document.getElementById('nt-fee').value,
+    data: document.getElementById('nt-data').innerText.split('\n'),
+  }
+}
+
+function extractNewContractData() {
+  return {
+    author: document.getElementById('nc-select-author').value,
+    value: +document.getElementById('nc-value').value,
+    fee: +document.getElementById('nc-fee').value,
+    cll: document.getElementById('nc-cll').innerText,
+    js: document.getElementById('nc-js').innerText,
+  }
+}
+
+function extractNewWalletData() {
+  return {
+    id: document.getElementById('nw-id').value,
+    value: +document.getElementById('nw-value').value,
   }
 }
 
@@ -208,3 +239,4 @@ sim.createTransaction({
   data: [123,1337],
 })
 
+  
