@@ -1,4 +1,5 @@
 var fs = require('fs')
+var Uuid = require('hat')
 var Handlebars = require('handlebars')
 var Simulator = require('./index.js').Simulator
 
@@ -97,12 +98,25 @@ function prepareControlPanel() {
   var el = document.createElement('img')
   el.id = 'button-transaction'
   el.src = './assets/transfer.svg'
-  el.className = 'clickable'
+  el.className = 'clickable svg-button'
   appElements.controls.appendChild(el)
+
   var el = document.createElement('img')
   el.id = 'button-contract'
   el.src = './assets/contract.svg'
-  el.className = 'clickable'
+  el.className = 'clickable svg-button'
+  appElements.controls.appendChild(el)
+  
+  var el = document.createElement('img')
+  el.id = 'button-wallet'
+  el.src = './assets/wallet.svg'
+  el.className = 'clickable svg-button'
+  appElements.controls.appendChild(el)
+
+  var el = document.createElement('img')
+  el.id = 'button-info'
+  el.src = './assets/info.svg'
+  el.className = 'clickable svg-button'
   appElements.controls.appendChild(el)
 }
 
@@ -113,6 +127,8 @@ function prepareTemplates() {
     wallet: Handlebars.compile(fs.readFileSync('./templates/wallet.hbs').toString()),
     new_transaction: Handlebars.compile(fs.readFileSync('./templates/new_transaction.hbs').toString()),
     new_contract: Handlebars.compile(fs.readFileSync('./templates/new_contract.hbs').toString()),
+    new_wallet: Handlebars.compile(fs.readFileSync('./templates/new_wallet.hbs').toString()),
+    about: Handlebars.compile(fs.readFileSync('./templates/about.hbs').toString()),
   }
   return appTemplates
 }
@@ -163,6 +179,10 @@ function handleClick(event){
     renderDetailsSection(appTemplates.new_transaction, {wallets: sim.wallets})
   } else if (event.target.id === 'button-contract') {
     renderDetailsSection(appTemplates.new_contract, {wallets: sim.wallets})
+  } else if (event.target.id === 'button-wallet') {
+    renderDetailsSection(appTemplates.new_wallet, {id: Uuid()})
+  } else if (event.target.id === 'button-info') {
+    renderDetailsSection(appTemplates.about)
   }
 }
 
