@@ -95,6 +95,12 @@ html, body {
 #details .clickable:hover {
   color: rgb(71, 222, 14);
 }
+#details a {
+  color: rgb(71, 222, 14);
+}
+#details a:hover {
+  color: rgb(77, 240, 15);
+}
 
 #controls {
   height: 10%;
