@@ -14,3 +14,11 @@ You can help support the development of tools for ethereum education and advocac
 * telling more people about the simulator
 
 Donations are accepted at `BTC 14AYZ8qR8GDroQD72sisztMqnErYWnLqN8`
+
+
+== Example ==
+
+The code is available at http://k1n0k0.github.io/ethereum-simulator/
+
+Video:
+* [Ethereum Namecoin contract demo](https://www.youtube.com/watch?v=-uImE_pJbBs)
