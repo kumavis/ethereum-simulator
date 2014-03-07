@@ -5,9 +5,12 @@ var appView = require('./lib/view.js')
 sim = new Simulator()
 
 // initialize the view
-appView({
+var viewSetttings = {
+  animatationDelay: false,
   sim: sim,
-})
+}
+
+appView(viewSetttings)
 
 //
 // Begin simulation
@@ -67,4 +70,6 @@ sim.createContract({
   cll: fs.readFileSync('./examples/hedge.cll').toString(),
   js: fs.readFileSync('./examples/hedge.js').toString(),
 })
-  
+
+// re-enable animation delay so for actions taken by the user
+viewSetttings.animatationDelay = true
