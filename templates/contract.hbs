@@ -9,14 +9,7 @@
 <div>ID: {{id}}</div>
 <div>Address: {{address}}</div>
 <div>JS Code:</div>
-- - - - - - - - - - - - - - - - - - - -
-<br><br>
-
-<div class="ethereum-code">{{js}}</div>
-
-<br>
-- - - - - - - - - - - - - - - - - - - -
-<br><br>
+<div class="textarea ethereum-code" contenteditable="false">{{js}}</div>
 
 <div>Storage:</div>
 <br>
@@ -27,5 +20,5 @@
     <br>
   {{/if}}
 {{else}}
-  empty
+  (empty)
 {{/each}}

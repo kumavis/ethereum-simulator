@@ -49,7 +49,8 @@ html, body {
   border: dotted rgb(39, 143, 0);
   height: auto;
   min-height: 100px;
-  padding: 2px;
+  padding: 6px;
+  overflow: scroll;
 }
 
 .app-screen input {
