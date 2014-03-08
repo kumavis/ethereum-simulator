@@ -1,9 +1,9 @@
 # ethereum-simulator
 
-A playground for [ethereum](https://ethereum.org) crypto-contracts.
-Inspect contracts, activate them with a transcation, and try your hand at creating your own.
+A playground for [Ethereum](https://ethereum.org) crypto-contracts.
+Inspect contracts, activate them with a transaction, and try your hand at creating your own.
 
-More information about ethereum available [on the forums](http://forum.ethereum.org/)
+More information about ethereum available [on the forums](http://forum.ethereum.org/).
 Meet others on freenode using [a webclient](https://webchat.freenode.net/?channels=ethereum) or [your own](irc://chat.freenode.net/ethereum).
 
 I originally built this to help teach myself how crypto-contracts work.
