@@ -12,7 +12,8 @@
   "dependencies": {
     "hat": "0.0.3",
     "extend": "~1.2.1",
-    "handlebars": "~2.0.0-alpha.1"
+    "handlebars": "~2.0.0-alpha.1",
+    "clone": "~0.1.11"
   },
   "devDependencies": {
     "brfs": "~1.0.0",
