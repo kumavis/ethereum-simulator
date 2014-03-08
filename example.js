@@ -21,7 +21,6 @@ sim.on('contract',function(contract,transaction) {
 
 var newContract = sim.createContract({
   id: 'myContract',
-  cll: fs.readFileSync('./examples/namecoin.cll').toString(),
   js: fs.readFileSync('./examples/namecoin.js').toString(),
 })
 
