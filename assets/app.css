@@ -85,8 +85,35 @@ html, body {
 #wallets {
   height: 50%;
 }
+
 #contracts {
   height: 50%;
+}
+
+#blocks-wrapper {
+  padding-left: 0px;
+}
+
+#blocks {
+  height: 100%;
+  width: 9999px;
+}
+
+#blocks .block {
+  float: left;
+  height: 100%;
+  width: 250px;
+  margin-left: 4px;
+  border: 2px solid rgb(39, 143, 0);
+  padding: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#blocks .block > * {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 #details {
@@ -107,8 +134,10 @@ html, body {
   height: 10%;
 }
 
-#transactions {
+#blocks-wrapper {
   height: 20%;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .ethereum-code {
