@@ -29,7 +29,7 @@ html, body {
   padding: 6px;
   font-family: monospace;
   color: rgb(39, 143, 0);
-  overflow: scroll;
+  overflow: auto;
 }
 .app-screen .clickable:hover {
   color: rgb(55, 186, 6);
@@ -50,7 +50,7 @@ html, body {
   height: auto;
   min-height: 100px;
   padding: 6px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .app-screen input {
