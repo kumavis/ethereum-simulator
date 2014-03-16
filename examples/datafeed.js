@@ -1,4 +1,4 @@
-var FEEDOWNER = 'crypsy.com'
+var FEEDOWNER = 'cryptsy.com'
 
 if (tx.sender != FEEDOWNER) {
   return  

@@ -1,5 +1,5 @@
 // Setup: Author creates contract with 4k ether
-var DATA_FEED = 'crypsyfeed'
+var DATA_FEED = 'cryptsyfeed'
 var DATA_INDEX = 'USD/ETH'
 var AUTHOR = 'myWallet'
 
