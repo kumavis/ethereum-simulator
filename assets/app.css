@@ -47,14 +47,6 @@ html, body {
   color: rgba(252, 133, 255, 0.8);
   text-shadow: 0px -1px 0px rgba(0,0,0,.5);
 }
-.app-screen .textarea {
-  outline: none;
-  border: dotted rgb(39, 143, 0);
-  height: auto;
-  min-height: 100px;
-  padding: 6px;
-  overflow: auto;
-}
 
 .app-screen input {
   outline: none;
@@ -147,6 +139,16 @@ html, body {
 }
 #details a:hover {
   color: rgb(77, 240, 15);
+}
+
+#code-editor-container {
+  margin-top: 6px;
+  margin-right: 0px;
+  margin-bottom: 6px;
+  border: dotted rgb(39, 143, 0);
+  height: auto;
+  min-height: 100px;
+  overflow: auto;
 }
 
 #controls {
