@@ -28,6 +28,7 @@ html, body {
   background-color: rgba(0, 0, 0, 0.77);
   padding: 6px;
   font-family: monospace;
+  font-size: 13px;
   color: rgb(39, 143, 0);
   overflow: auto;
 }
@@ -42,7 +43,9 @@ html, body {
   background-color: rgb(141, 40, 152);
   padding: 6px;
   font-family: monospace;
-  color: rgb(39, 143, 0);
+  font-size: 18px;
+  color: rgba(252, 133, 255, 0.8);
+  text-shadow: 0px -1px 0px rgba(0,0,0,.5);
 }
 .app-screen .textarea {
   outline: none;
@@ -82,16 +85,28 @@ html, body {
   white-space: nowrap;
 }
 
+#wallets-wrapper {
+  height: 50%;
+}
 #wallets {
-  height: 50%;
+  height: 100%;
 }
 
+#contracts-wrapper {
+  height: 50%;
+}
 #contracts {
-  height: 50%;
+  height: 100%;
 }
 
-#blocks-wrapper {
+#blocks-wrapper-outer {
+  height: 100%;
   padding-left: 0px;
+}
+
+#blocks-wrapper-inner {
+  height: 100%;
+  overflow: auto;
 }
 
 #blocks {
@@ -116,8 +131,11 @@ html, body {
   overflow: hidden;
 }
 
-#details {
+#details-wrapper {
   height: 90%;
+}
+#details {
+  height: 100%;
   color: rgb(55, 186, 6);
 }
 #details .clickable:hover {
@@ -134,10 +152,9 @@ html, body {
   height: 10%;
 }
 
-#blocks-wrapper {
+#bottom {
   height: 20%;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .ethereum-code {
