@@ -11,14 +11,14 @@ html, body {
 /* app sections */
 
 #left {
-  width: 50%;
+  width: 30%;
   height: 80%;
   float: left;
 }
 #right {
-  width: 50%;
+  margin-left: 30%;
+  width: 70%;
   height: 80%;
-  margin-left: 50%;
 }
 
 .app-screen {
@@ -132,7 +132,8 @@ html, body {
 }
 
 #details-wrapper {
-  height: 90%;
+  height: 94%;
+  padding-top: 0px;
 }
 #details {
   height: 100%;
@@ -149,7 +150,10 @@ html, body {
 }
 
 #controls {
-  height: 10%;
+  height: 6%;
+  padding: 0px;
+  padding-top: 2px;
+  padding-left: 6px;
 }
 
 #bottom {
