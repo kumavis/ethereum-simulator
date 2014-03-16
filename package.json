@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "beefy app.js:bundle.js --open --live -- -t brfs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ghpages": "git branch -D gh-pages; git checkout -b gh-pages; browserify -t brfs app.js > bundle.js; git add bundle.js; git commit -m 'Latest Build'; git push -f origin gh-pages; git checkout master;"
   },
   "author": "",
   "license": "BSD-2-Clause",
