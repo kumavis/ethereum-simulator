@@ -1,6 +1,4 @@
 // Setup: Author creates contract with 4k ether
-var DATA_FEED = 'cryptsyfeed'
-var DATA_INDEX = 'USD/ETH'
 var AUTHOR = 'myWallet'
 
 // if not initialized
@@ -32,5 +30,5 @@ if (!contract.storage['contract_initialized']) {
 }
 
 function getCurrentUsdEthRate() {
-    return block.contract_storage(DATA_FEED)[DATA_INDEX]
+    return block.contract_storage('cryptsyfeed')['USD/ETH']
 }
