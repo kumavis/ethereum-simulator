@@ -1,5 +1,7 @@
 # ethereum-simulator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kumavis/ethereum-simulator.svg)](https://greenkeeper.io/)
+
 A playground for [Ethereum](https://ethereum.org) crypto-contracts.
 Inspect contracts, activate them with a transaction, and try your hand at creating your own.
 
