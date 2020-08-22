@@ -49,5 +49,3 @@ You can help support the development of tools for ethereum education and advocac
 * contributing code
 * contributing BTC to the development fund
 * telling more people about the simulator
-
-Donations are accepted at `BTC 14AYZ8qR8GDroQD72sisztMqnErYWnLqN8`
