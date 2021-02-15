@@ -12,14 +12,14 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "hat": "0.0.3",
-    "extend": "~1.2.1",
-    "handlebars": "~2.0.0-alpha.1",
-    "clone": "~0.1.11",
+    "extend": "~3.0.0",
+    "handlebars": "~4.0.6",
+    "clone": "~2.0.0",
     "javascript-editor": "kumavis/javascript-editor"
   },
   "devDependencies": {
-    "brfs": "~1.0.0",
-    "beefy": "~1.1.0",
-    "browserify": "~3.32.0"
+    "brfs": "~1.4.3",
+    "beefy": "~2.1.8",
+    "browserify": "~13.1.1"
   }
 }
